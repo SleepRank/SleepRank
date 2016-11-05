@@ -14,6 +14,12 @@
 		7C718DBD1DCDC2E100F0BC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C718DBB1DCDC2E100F0BC0A /* LaunchScreen.storyboard */; };
 		7C718DC81DCDC2E100F0BC0A /* SleepRankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DC71DCDC2E100F0BC0A /* SleepRankTests.swift */; };
 		7C718DD31DCDC2E100F0BC0A /* SleepRankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DD21DCDC2E100F0BC0A /* SleepRankUITests.swift */; };
+		7C718DED1DCE243A00F0BC0A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C718DEB1DCE1FC700F0BC0A /* libsqlite3.tbd */; };
+		7C718DF11DCE246000F0BC0A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C718DF01DCE246000F0BC0A /* SQLite.framework */; };
+		7C718DF81DCE497400F0BC0A /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF41DCE497400F0BC0A /* DataHelper.swift */; };
+		7C718DF91DCE497400F0BC0A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF51DCE497400F0BC0A /* DataModel.swift */; };
+		7C718DFA1DCE497400F0BC0A /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C718DF61DCE497400F0BC0A /* db.sqlite3 */; };
+		7C718DFB1DCE497400F0BC0A /* SQLiteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		7C718DCE1DCDC2E100F0BC0A /* SleepRankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepRankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C718DD21DCDC2E100F0BC0A /* SleepRankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRankUITests.swift; sourceTree = "<group>"; };
 		7C718DD41DCDC2E100F0BC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C718DEB1DCE1FC700F0BC0A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		7C718DF01DCE246000F0BC0A /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		7C718DF41DCE497400F0BC0A /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = db/DataHelper.swift; sourceTree = "<group>"; };
+		7C718DF51DCE497400F0BC0A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = db/DataModel.swift; sourceTree = "<group>"; };
+		7C718DF61DCE497400F0BC0A /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite3; path = db/db.sqlite3; sourceTree = "<group>"; };
+		7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteDataStore.swift; path = db/SQLiteDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C718DF11DCE246000F0BC0A /* SQLite.framework in Frameworks */,
+				7C718DED1DCE243A00F0BC0A /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +95,7 @@
 				7C718DC61DCDC2E100F0BC0A /* SleepRankTests */,
 				7C718DD11DCDC2E100F0BC0A /* SleepRankUITests */,
 				7C718DB01DCDC2E100F0BC0A /* Products */,
+				7C718DEA1DCE1FC700F0BC0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +112,10 @@
 		7C718DB11DCDC2E100F0BC0A /* SleepRank */ = {
 			isa = PBXGroup;
 			children = (
+				7C718DF41DCE497400F0BC0A /* DataHelper.swift */,
+				7C718DF51DCE497400F0BC0A /* DataModel.swift */,
+				7C718DF61DCE497400F0BC0A /* db.sqlite3 */,
+				7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */,
 				7C718DB21DCDC2E100F0BC0A /* AppDelegate.swift */,
 				7C718DB41DCDC2E100F0BC0A /* ViewController.swift */,
 				7C718DB61DCDC2E100F0BC0A /* Main.storyboard */,
@@ -123,6 +142,15 @@
 				7C718DD41DCDC2E100F0BC0A /* Info.plist */,
 			);
 			path = SleepRankUITests;
+			sourceTree = "<group>";
+		};
+		7C718DEA1DCE1FC700F0BC0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C718DF01DCE246000F0BC0A /* SQLite.framework */,
+				7C718DEB1DCE1FC700F0BC0A /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C718DFA1DCE497400F0BC0A /* db.sqlite3 in Resources */,
 				7C718DBD1DCDC2E100F0BC0A /* LaunchScreen.storyboard in Resources */,
 				7C718DBA1DCDC2E100F0BC0A /* Assets.xcassets in Resources */,
 				7C718DB81DCDC2E100F0BC0A /* Main.storyboard in Resources */,
@@ -259,7 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C718DF81DCE497400F0BC0A /* DataHelper.swift in Sources */,
+				7C718DF91DCE497400F0BC0A /* DataModel.swift in Sources */,
 				7C718DB51DCDC2E100F0BC0A /* ViewController.swift in Sources */,
+				7C718DFB1DCE497400F0BC0A /* SQLiteDataStore.swift in Sources */,
 				7C718DB31DCDC2E100F0BC0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +444,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SleepRank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRank;
@@ -424,6 +460,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SleepRank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRank;
@@ -505,6 +545,7 @@
 				7C718DD91DCDC2E100F0BC0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C718DDA1DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRankTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +554,7 @@
 				7C718DDC1DCDC2E100F0BC0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C718DDD1DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRankUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +563,7 @@
 				7C718DDF1DCDC2E100F0BC0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
