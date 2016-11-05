@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C718DB31DCDC2E100F0BC0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DB21DCDC2E100F0BC0A /* AppDelegate.swift */; };
+		7C718DB51DCDC2E100F0BC0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DB41DCDC2E100F0BC0A /* ViewController.swift */; };
+		7C718DB81DCDC2E100F0BC0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C718DB61DCDC2E100F0BC0A /* Main.storyboard */; };
+		7C718DBA1DCDC2E100F0BC0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C718DB91DCDC2E100F0BC0A /* Assets.xcassets */; };
+		7C718DBD1DCDC2E100F0BC0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C718DBB1DCDC2E100F0BC0A /* LaunchScreen.storyboard */; };
+		7C718DC81DCDC2E100F0BC0A /* SleepRankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DC71DCDC2E100F0BC0A /* SleepRankTests.swift */; };
+		7C718DD31DCDC2E100F0BC0A /* SleepRankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DD21DCDC2E100F0BC0A /* SleepRankUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7C718DC41DCDC2E100F0BC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C718DA71DCDC2E000F0BC0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C718DAE1DCDC2E000F0BC0A;
+			remoteInfo = SleepRank;
+		};
+		7C718DCF1DCDC2E100F0BC0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7C718DA71DCDC2E000F0BC0A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C718DAE1DCDC2E000F0BC0A;
+			remoteInfo = SleepRank;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7C718DAF1DCDC2E100F0BC0A /* SleepRank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepRank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C718DB21DCDC2E100F0BC0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7C718DB41DCDC2E100F0BC0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C718DB71DCDC2E100F0BC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C718DB91DCDC2E100F0BC0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C718DBC1DCDC2E100F0BC0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7C718DBE1DCDC2E100F0BC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C718DC31DCDC2E100F0BC0A /* SleepRankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepRankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C718DC71DCDC2E100F0BC0A /* SleepRankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRankTests.swift; sourceTree = "<group>"; };
+		7C718DC91DCDC2E100F0BC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C718DCE1DCDC2E100F0BC0A /* SleepRankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepRankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C718DD21DCDC2E100F0BC0A /* SleepRankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepRankUITests.swift; sourceTree = "<group>"; };
+		7C718DD41DCDC2E100F0BC0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C718DAC1DCDC2E000F0BC0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C718DC01DCDC2E100F0BC0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C718DCB1DCDC2E100F0BC0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C718DA61DCDC2E000F0BC0A = {
+			isa = PBXGroup;
+			children = (
+				7C718DB11DCDC2E100F0BC0A /* SleepRank */,
+				7C718DC61DCDC2E100F0BC0A /* SleepRankTests */,
+				7C718DD11DCDC2E100F0BC0A /* SleepRankUITests */,
+				7C718DB01DCDC2E100F0BC0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C718DB01DCDC2E100F0BC0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C718DAF1DCDC2E100F0BC0A /* SleepRank.app */,
+				7C718DC31DCDC2E100F0BC0A /* SleepRankTests.xctest */,
+				7C718DCE1DCDC2E100F0BC0A /* SleepRankUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C718DB11DCDC2E100F0BC0A /* SleepRank */ = {
+			isa = PBXGroup;
+			children = (
+				7C718DB21DCDC2E100F0BC0A /* AppDelegate.swift */,
+				7C718DB41DCDC2E100F0BC0A /* ViewController.swift */,
+				7C718DB61DCDC2E100F0BC0A /* Main.storyboard */,
+				7C718DB91DCDC2E100F0BC0A /* Assets.xcassets */,
+				7C718DBB1DCDC2E100F0BC0A /* LaunchScreen.storyboard */,
+				7C718DBE1DCDC2E100F0BC0A /* Info.plist */,
+			);
+			path = SleepRank;
+			sourceTree = "<group>";
+		};
+		7C718DC61DCDC2E100F0BC0A /* SleepRankTests */ = {
+			isa = PBXGroup;
+			children = (
+				7C718DC71DCDC2E100F0BC0A /* SleepRankTests.swift */,
+				7C718DC91DCDC2E100F0BC0A /* Info.plist */,
+			);
+			path = SleepRankTests;
+			sourceTree = "<group>";
+		};
+		7C718DD11DCDC2E100F0BC0A /* SleepRankUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7C718DD21DCDC2E100F0BC0A /* SleepRankUITests.swift */,
+				7C718DD41DCDC2E100F0BC0A /* Info.plist */,
+			);
+			path = SleepRankUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C718DAE1DCDC2E000F0BC0A /* SleepRank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C718DD71DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRank" */;
+			buildPhases = (
+				7C718DAB1DCDC2E000F0BC0A /* Sources */,
+				7C718DAC1DCDC2E000F0BC0A /* Frameworks */,
+				7C718DAD1DCDC2E000F0BC0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepRank;
+			productName = SleepRank;
+			productReference = 7C718DAF1DCDC2E100F0BC0A /* SleepRank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7C718DC21DCDC2E100F0BC0A /* SleepRankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C718DDA1DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRankTests" */;
+			buildPhases = (
+				7C718DBF1DCDC2E100F0BC0A /* Sources */,
+				7C718DC01DCDC2E100F0BC0A /* Frameworks */,
+				7C718DC11DCDC2E100F0BC0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C718DC51DCDC2E100F0BC0A /* PBXTargetDependency */,
+			);
+			name = SleepRankTests;
+			productName = SleepRankTests;
+			productReference = 7C718DC31DCDC2E100F0BC0A /* SleepRankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7C718DCD1DCDC2E100F0BC0A /* SleepRankUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C718DDD1DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRankUITests" */;
+			buildPhases = (
+				7C718DCA1DCDC2E100F0BC0A /* Sources */,
+				7C718DCB1DCDC2E100F0BC0A /* Frameworks */,
+				7C718DCC1DCDC2E100F0BC0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7C718DD01DCDC2E100F0BC0A /* PBXTargetDependency */,
+			);
+			name = SleepRankUITests;
+			productName = SleepRankUITests;
+			productReference = 7C718DCE1DCDC2E100F0BC0A /* SleepRankUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C718DA71DCDC2E000F0BC0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = SleepRank;
+				TargetAttributes = {
+					7C718DAE1DCDC2E000F0BC0A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					7C718DC21DCDC2E100F0BC0A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7C718DAE1DCDC2E000F0BC0A;
+					};
+					7C718DCD1DCDC2E100F0BC0A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7C718DAE1DCDC2E000F0BC0A;
+					};
+				};
+			};
+			buildConfigurationList = 7C718DAA1DCDC2E000F0BC0A /* Build configuration list for PBXProject "SleepRank" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C718DA61DCDC2E000F0BC0A;
+			productRefGroup = 7C718DB01DCDC2E100F0BC0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C718DAE1DCDC2E000F0BC0A /* SleepRank */,
+				7C718DC21DCDC2E100F0BC0A /* SleepRankTests */,
+				7C718DCD1DCDC2E100F0BC0A /* SleepRankUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C718DAD1DCDC2E000F0BC0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C718DBD1DCDC2E100F0BC0A /* LaunchScreen.storyboard in Resources */,
+				7C718DBA1DCDC2E100F0BC0A /* Assets.xcassets in Resources */,
+				7C718DB81DCDC2E100F0BC0A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C718DC11DCDC2E100F0BC0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C718DCC1DCDC2E100F0BC0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C718DAB1DCDC2E000F0BC0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C718DB51DCDC2E100F0BC0A /* ViewController.swift in Sources */,
+				7C718DB31DCDC2E100F0BC0A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C718DBF1DCDC2E100F0BC0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C718DC81DCDC2E100F0BC0A /* SleepRankTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C718DCA1DCDC2E100F0BC0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C718DD31DCDC2E100F0BC0A /* SleepRankUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7C718DC51DCDC2E100F0BC0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C718DAE1DCDC2E000F0BC0A /* SleepRank */;
+			targetProxy = 7C718DC41DCDC2E100F0BC0A /* PBXContainerItemProxy */;
+		};
+		7C718DD01DCDC2E100F0BC0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C718DAE1DCDC2E000F0BC0A /* SleepRank */;
+			targetProxy = 7C718DCF1DCDC2E100F0BC0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7C718DB61DCDC2E100F0BC0A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C718DB71DCDC2E100F0BC0A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7C718DBB1DCDC2E100F0BC0A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C718DBC1DCDC2E100F0BC0A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C718DD51DCDC2E100F0BC0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C718DD61DCDC2E100F0BC0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C718DD81DCDC2E100F0BC0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SleepRank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7C718DD91DCDC2E100F0BC0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SleepRank/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7C718DDB1DCDC2E100F0BC0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SleepRankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepRank.app/SleepRank";
+			};
+			name = Debug;
+		};
+		7C718DDC1DCDC2E100F0BC0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SleepRankTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepRank.app/SleepRank";
+			};
+			name = Release;
+		};
+		7C718DDE1DCDC2E100F0BC0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SleepRankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SleepRank;
+			};
+			name = Debug;
+		};
+		7C718DDF1DCDC2E100F0BC0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SleepRankUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SleepRank;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C718DAA1DCDC2E000F0BC0A /* Build configuration list for PBXProject "SleepRank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C718DD51DCDC2E100F0BC0A /* Debug */,
+				7C718DD61DCDC2E100F0BC0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C718DD71DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C718DD81DCDC2E100F0BC0A /* Debug */,
+				7C718DD91DCDC2E100F0BC0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7C718DDA1DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C718DDB1DCDC2E100F0BC0A /* Debug */,
+				7C718DDC1DCDC2E100F0BC0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7C718DDD1DCDC2E100F0BC0A /* Build configuration list for PBXNativeTarget "SleepRankUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C718DDE1DCDC2E100F0BC0A /* Debug */,
+				7C718DDF1DCDC2E100F0BC0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C718DA71DCDC2E000F0BC0A /* Project object */;
+}
