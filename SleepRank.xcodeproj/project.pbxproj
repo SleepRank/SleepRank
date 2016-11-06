@@ -21,6 +21,14 @@
 		7C718DFB1DCE497400F0BC0A /* SQLiteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */; };
 		7CC92ECD1DCEB89F00688E0E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C718DF01DCE246000F0BC0A /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CC92ED11DCEBD8600688E0E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC92ED01DCEBD8600688E0E /* HealthKit.framework */; };
+		7CC92ED61DCEC04400688E0E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC92ED21DCEC04400688E0E /* Bolts.framework */; };
+		7CC92ED71DCEC04500688E0E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC92ED31DCEC04400688E0E /* FBSDKCoreKit.framework */; };
+		7CC92ED81DCEC04500688E0E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC92ED41DCEC04400688E0E /* FBSDKLoginKit.framework */; };
+		7CC92ED91DCEC04500688E0E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC92ED51DCEC04400688E0E /* FBSDKShareKit.framework */; };
+		7CC92EDE1DCEC09A00688E0E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC92EDA1DCEC09A00688E0E /* LoginViewController.swift */; };
+		7CC92EDF1DCEC09A00688E0E /* Sleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC92EDB1DCEC09A00688E0E /* Sleeper.swift */; };
+		7CC92EE01DCEC09A00688E0E /* SleeperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC92EDC1DCEC09A00688E0E /* SleeperCell.swift */; };
+		7CC92EE11DCEC09A00688E0E /* SleeperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC92EDD1DCEC09A00688E0E /* SleeperDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +84,14 @@
 		7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteDataStore.swift; path = db/SQLiteDataStore.swift; sourceTree = "<group>"; };
 		7CC92ECF1DCEBD8600688E0E /* SleepRank.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SleepRank.entitlements; sourceTree = "<group>"; };
 		7CC92ED01DCEBD8600688E0E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		7CC92ED21DCEC04400688E0E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		7CC92ED31DCEC04400688E0E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		7CC92ED41DCEC04400688E0E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		7CC92ED51DCEC04400688E0E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Frameworks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		7CC92EDA1DCEC09A00688E0E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7CC92EDB1DCEC09A00688E0E /* Sleeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sleeper.swift; sourceTree = "<group>"; };
+		7CC92EDC1DCEC09A00688E0E /* SleeperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleeperCell.swift; sourceTree = "<group>"; };
+		7CC92EDD1DCEC09A00688E0E /* SleeperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleeperDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +99,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC92ED61DCEC04400688E0E /* Bolts.framework in Frameworks */,
+				7CC92ED71DCEC04500688E0E /* FBSDKCoreKit.framework in Frameworks */,
+				7CC92ED91DCEC04500688E0E /* FBSDKShareKit.framework in Frameworks */,
+				7CC92ED81DCEC04500688E0E /* FBSDKLoginKit.framework in Frameworks */,
 				7C718DED1DCE243A00F0BC0A /* libsqlite3.tbd in Frameworks */,
 				7CC92ED11DCEBD8600688E0E /* HealthKit.framework in Frameworks */,
 			);
@@ -140,6 +160,10 @@
 		7C718DB11DCDC2E100F0BC0A /* SleepRank */ = {
 			isa = PBXGroup;
 			children = (
+				7CC92EDA1DCEC09A00688E0E /* LoginViewController.swift */,
+				7CC92EDB1DCEC09A00688E0E /* Sleeper.swift */,
+				7CC92EDC1DCEC09A00688E0E /* SleeperCell.swift */,
+				7CC92EDD1DCEC09A00688E0E /* SleeperDetailViewController.swift */,
 				7CC92ECF1DCEBD8600688E0E /* SleepRank.entitlements */,
 				7C6876E21DCE7FF3003943E3 /* DB */,
 				7C718DB21DCDC2E100F0BC0A /* AppDelegate.swift */,
@@ -173,6 +197,10 @@
 		7C718DEA1DCE1FC700F0BC0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CC92ED21DCEC04400688E0E /* Bolts.framework */,
+				7CC92ED31DCEC04400688E0E /* FBSDKCoreKit.framework */,
+				7CC92ED41DCEC04400688E0E /* FBSDKLoginKit.framework */,
+				7CC92ED51DCEC04400688E0E /* FBSDKShareKit.framework */,
 				7CC92ED01DCEBD8600688E0E /* HealthKit.framework */,
 				7C718DF01DCE246000F0BC0A /* SQLite.framework */,
 				7C718DEB1DCE1FC700F0BC0A /* libsqlite3.tbd */,
@@ -322,8 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CC92EDE1DCEC09A00688E0E /* LoginViewController.swift in Sources */,
 				7C718DF81DCE497400F0BC0A /* DataHelper.swift in Sources */,
+				7CC92EDF1DCEC09A00688E0E /* Sleeper.swift in Sources */,
 				7C718DF91DCE497400F0BC0A /* DataModel.swift in Sources */,
+				7CC92EE01DCEC09A00688E0E /* SleeperCell.swift in Sources */,
+				7CC92EE11DCEC09A00688E0E /* SleeperDetailViewController.swift in Sources */,
 				7C718DB51DCDC2E100F0BC0A /* ViewController.swift in Sources */,
 				7C718DFB1DCE497400F0BC0A /* SQLiteDataStore.swift in Sources */,
 				7C718DB31DCDC2E100F0BC0A /* AppDelegate.swift in Sources */,
@@ -483,6 +515,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = SleepRank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -501,6 +534,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = SleepRank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
