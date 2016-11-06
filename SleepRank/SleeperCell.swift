@@ -11,18 +11,18 @@ import UIKit
 
 class SleeperCell: UITableViewCell {
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sleepingTimeLabel: UILabel!
-    @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     
     var sleeper: Sleeper! {
         didSet {
-            
+            rankLabel.text = sleeper.rank
             nameLabel.text = sleeper.name
-            sleepingTimeLabel.text = ".\(sleeper.sleepingTime)"
-
+            sleepingTimeLabel.text = String(format: "%.2f", sleeper.sleepTime!) + " hours"
+            //let noImageUrl: URL = URL(string: "http://1vyf1h2a37bmf88hy3i8ce9e.wpengine.netdna-cdn.com/wp-content/themes/public/img/noimgavailable.jpg")!
         }
     }
     

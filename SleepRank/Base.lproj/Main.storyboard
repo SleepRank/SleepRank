@@ -12,7 +12,7 @@
         <!--Login View Controller-->
         <scene sceneID="vp4-pR-a69">
             <objects>
-                <viewController id="8MX-i5-bwy" userLabel="Login View Controller" customClass="LoginViewController" customModule="SleepRank" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="8MX-i5-bwy" userLabel="Login View Controller" customClass="LoginViewController" customModule="SleepRank" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ljH-Tu-N4A"/>
                         <viewControllerLayoutGuide type="bottom" id="hwk-AW-Qqh"/>
@@ -56,7 +56,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="pyK-KX-9sZ" customClass="sleeperCell" customModule="SleepRank" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SleeperCell" rowHeight="90" id="pyK-KX-9sZ" customClass="SleeperCell" customModule="SleepRank" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pyK-KX-9sZ" id="J0w-mV-zao">
@@ -107,7 +107,7 @@
                                             <outlet property="profileImageView" destination="6A5-zc-BVB" id="QaS-IQ-Sxb"/>
                                             <outlet property="rankLabel" destination="EWm-K4-p94" id="Tuz-5k-ABu"/>
                                             <outlet property="sleepingTimeLabel" destination="DJu-j1-1R1" id="ihh-gw-eJZ"/>
-                                            <segue destination="cE1-d7-gKK" kind="showDetail" id="mzD-ZV-BhS"/>
+                                            <segue destination="cE1-d7-gKK" kind="show" id="amc-a4-2L3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -115,7 +115,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DkE-5d-R3L"/>
+                    <navigationItem key="navigationItem" id="DkE-5d-R3L">
+                        <barButtonItem key="rightBarButtonItem" id="TJx-1E-BwT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iad-b6-gD2">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mV0-eJ-Igd"/>
+                                    <segue destination="8MX-i5-bwy" kind="presentation" identifier="logout" id="LNb-Aj-yJc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="75W-bC-VIw" id="JNB-Ag-pOt"/>
                     </connections>
@@ -140,14 +153,6 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="315"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR4-SA-TNJ">
-                                <rect key="frame" x="125" y="562" width="125" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="logout:" destination="cE1-d7-gKK" eventType="touchUpInside" id="hEv-Rk-Yha"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

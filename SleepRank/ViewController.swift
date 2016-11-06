@@ -13,12 +13,19 @@ import FBSDKLoginKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     let healthStore = HKHealthStore()
+    var window = UIWindow()
     var imageView:UIImageView!
     var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     var headerView: UIView!
     var sleepers:[Sleeper]!
+    var sleepTime:Double!
 
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func logout(_ sender: UIButton) {
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        performSegue(withIdentifier: "logout", sender: sender)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +47,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         // Get sleepers data
-        getSleepers()
+        sleepers = []
+        retrieveSleepAnalysis()
         
         // Initiate imageView:
         imageView = UIImageView()
-        imageView.frame.size = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width * 0.562)
+        imageView.frame.size = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.width)
         
         // Initiate tableView:
         tableView.dataSource = self
@@ -59,14 +67,70 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-    // Functions getting Data:
-    func getSleepers() {
+    // Functions getting health data:
+    func retrieveSleepAnalysis() {
         
-        for index in 1...10 {
-            sleepers[index].name = "lalalalala"
-            sleepers[index].sleepingTime = Double(index)
+        // first, we define the object type we want
+        if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis) {
+            
+            // Use a sortDescriptor to get the recent data first
+            let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+            
+            // we create our query with a block completion to execute
+            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 5, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
+                
+                if error != nil {
+                    
+                    // something happened
+                    return
+                    
+                }
+                
+                if let result = tmpResult {
+                    
+                    // do something with my data
+                    for item in result{
+                        if let sample = item as? HKCategorySample {
+                            if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue{
+                                print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(sample.value)")
+                                self.sleepTime = sample.endDate.timeIntervalSince(sample.startDate) / 3600
+                                self.sleepers[0].sleepTime = self.sleepTime
+                                print("sleepTime updated")
+                                break
+                            }
+                        }
+                    }
+                    
+                    /* no need for printing all the data
+                    for item in result {
+                        if let sample = item as? HKCategorySample {
+                            let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "inBed" : "Asleep"
+                            print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
+                        }
+                    }
+                    */
+                }
+            }
+            
+            // finally, we execute our query
+            healthStore.execute(query)
+            
+            // Functions getting Data:
+            // getSleepers() in heaven
+            print("sleepers initialized")
+            if let t = self.sleepTime{
+                let sleeper = Sleeper(r:"", s:"user", t:t)
+                self.sleepers.append(sleeper)
+            } else {
+                let sleeper = Sleeper(r:"", s:"user", t:0.00)
+                self.sleepers.append(sleeper)
+            }
+            
+            for index in 1...10 {
+                let sleeper = Sleeper(r: "\(index)", s: "lalala", t: Double(index))
+                self.sleepers.append(sleeper)
+            }
         }
-        
     }
     
     // Functions supporting tableView:
@@ -104,12 +168,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         dismiss(animated: true, completion: {});
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        
+        if let cell = sender as? SleeperCell{
+            
+            cell.isSelected = false
+            
+            let indexPath = tableView.indexPath(for: cell)
+            let sleeper = sleepers[indexPath!.row]
+            
+            let detailViewController = segue.destination as! SleeperDetailViewController
+            
+            detailViewController.sleeper = sleeper
+        }
+    }
 
 }
 

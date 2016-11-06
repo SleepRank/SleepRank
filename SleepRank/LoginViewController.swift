@@ -12,6 +12,7 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
+    var loginButton: FBSDKLoginButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,36 +22,23 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if (FBSDKAccessToken.current() != nil)
         {
             performSegue(withIdentifier: "loginSegue", sender: self)
-            print("lalala")
+            print("Already logged In")
         }
         else
         {
-            var loginButton = FBSDKLoginButton()
+            loginButton = FBSDKLoginButton()
+            loginButton.delegate = self
             loginButton.readPermissions = ["public_profile", "email", "user_friends"]
             loginButton.center = self.view.center
             self.view.addSubview(loginButton)
+            print("add")
         }
+        print("over")
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         print("User Logged In")
-        
-        if ((error) != nil) {
-            // Process error
-            print(error)
-        }
-        else if result.isCancelled {
-            // Handle cancellations
-        }
-        else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email") {
-                // Do work
-            }
-            print("hehe")
-            performSegue(withIdentifier: "loginSegue", sender: self)
-        }
+        performSegue(withIdentifier: "loginSegue", sender: self)
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {

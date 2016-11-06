@@ -12,12 +12,8 @@ import FBSDKLoginKit
 
 class SleeperDetailViewController: UIViewController {
     
-    @IBAction func logout(_ sender: UIButton) {
-        let loginManager = FBSDKLoginManager()
-        loginManager.logOut()
-        dismiss(animated: true, completion: {});
+    var sleeper: Sleeper?
 
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
