@@ -73,6 +73,7 @@
 		7C718DF51DCE497400F0BC0A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = db/DataModel.swift; sourceTree = "<group>"; };
 		7C718DF61DCE497400F0BC0A /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = db.sqlite3; path = db/db.sqlite3; sourceTree = "<group>"; };
 		7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SQLiteDataStore.swift; path = db/SQLiteDataStore.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +244,13 @@
 				TargetAttributes = {
 					7C718DAE1DCDC2E000F0BC0A = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 477CNH7T4Q;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 					7C718DC21DCDC2E100F0BC0A = {
 						CreatedOnToolsVersion = 8.0;
@@ -470,6 +477,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+
 				INFOPLIST_FILE = SleepRank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRank;
@@ -486,6 +494,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+
 				INFOPLIST_FILE = SleepRank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SleepRank;
