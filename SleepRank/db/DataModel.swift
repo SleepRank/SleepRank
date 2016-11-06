@@ -12,5 +12,8 @@ typealias User = (
     name: String?,
     rank: Int64?,
     sleepTime: Double?,
+    friendArray: [Int64?],
+    favArray: [Int64?],
+    numOfLikes: Int64?,
     hasUpdated: Bool?
 )

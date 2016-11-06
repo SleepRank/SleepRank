@@ -15,11 +15,11 @@
 		7C718DC81DCDC2E100F0BC0A /* SleepRankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DC71DCDC2E100F0BC0A /* SleepRankTests.swift */; };
 		7C718DD31DCDC2E100F0BC0A /* SleepRankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DD21DCDC2E100F0BC0A /* SleepRankUITests.swift */; };
 		7C718DED1DCE243A00F0BC0A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C718DEB1DCE1FC700F0BC0A /* libsqlite3.tbd */; };
-		7C718DF11DCE246000F0BC0A /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C718DF01DCE246000F0BC0A /* SQLite.framework */; };
 		7C718DF81DCE497400F0BC0A /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF41DCE497400F0BC0A /* DataHelper.swift */; };
 		7C718DF91DCE497400F0BC0A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF51DCE497400F0BC0A /* DataModel.swift */; };
 		7C718DFA1DCE497400F0BC0A /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 7C718DF61DCE497400F0BC0A /* db.sqlite3 */; };
 		7C718DFB1DCE497400F0BC0A /* SQLiteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */; };
+		7CC92ECD1DCEB89F00688E0E /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C718DF01DCE246000F0BC0A /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,20 @@
 			remoteInfo = SleepRank;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CC92ECE1DCEB89F00688E0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7CC92ECD1DCEB89F00688E0E /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7C718DAF1DCDC2E100F0BC0A /* SleepRank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepRank.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C718DF11DCE246000F0BC0A /* SQLite.framework in Frameworks */,
 				7C718DED1DCE243A00F0BC0A /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +101,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C6876E21DCE7FF3003943E3 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				7C718DF41DCE497400F0BC0A /* DataHelper.swift */,
+				7C718DF51DCE497400F0BC0A /* DataModel.swift */,
+				7C718DF61DCE497400F0BC0A /* db.sqlite3 */,
+				7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
 		7C718DA61DCDC2E000F0BC0A = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +136,7 @@
 		7C718DB11DCDC2E100F0BC0A /* SleepRank */ = {
 			isa = PBXGroup;
 			children = (
-				7C718DF41DCE497400F0BC0A /* DataHelper.swift */,
-				7C718DF51DCE497400F0BC0A /* DataModel.swift */,
-				7C718DF61DCE497400F0BC0A /* db.sqlite3 */,
-				7C718DF71DCE497400F0BC0A /* SQLiteDataStore.swift */,
+				7C6876E21DCE7FF3003943E3 /* DB */,
 				7C718DB21DCDC2E100F0BC0A /* AppDelegate.swift */,
 				7C718DB41DCDC2E100F0BC0A /* ViewController.swift */,
 				7C718DB61DCDC2E100F0BC0A /* Main.storyboard */,
@@ -163,6 +184,7 @@
 				7C718DAB1DCDC2E000F0BC0A /* Sources */,
 				7C718DAC1DCDC2E000F0BC0A /* Frameworks */,
 				7C718DAD1DCDC2E000F0BC0A /* Resources */,
+				7CC92ECE1DCEB89F00688E0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
