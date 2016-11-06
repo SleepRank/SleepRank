@@ -23,6 +23,7 @@
 		9BBAC4761DCE87900045FDFE /* SleeperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAC4751DCE87900045FDFE /* SleeperCell.swift */; };
 		9BBAC47A1DCE8F8E0045FDFE /* SleeperDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAC4791DCE8F8E0045FDFE /* SleeperDetailViewController.swift */; };
 		9BBAC47C1DCE93230045FDFE /* Sleeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAC47B1DCE93230045FDFE /* Sleeper.swift */; };
+		9BBAC47E1DCF6A000045FDFE /* UIImageView+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BBAC47D1DCF69FE0045FDFE /* UIImageView+URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9BBAC4751DCE87900045FDFE /* SleeperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleeperCell.swift; sourceTree = "<group>"; };
 		9BBAC4791DCE8F8E0045FDFE /* SleeperDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleeperDetailViewController.swift; sourceTree = "<group>"; };
 		9BBAC47B1DCE93230045FDFE /* Sleeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sleeper.swift; sourceTree = "<group>"; };
+		9BBAC47D1DCF69FE0045FDFE /* UIImageView+URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+URL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				7C718DBE1DCDC2E100F0BC0A /* Info.plist */,
 				9BBAC4751DCE87900045FDFE /* SleeperCell.swift */,
 				9BBAC47B1DCE93230045FDFE /* Sleeper.swift */,
+				9BBAC47D1DCF69FE0045FDFE /* UIImageView+URL.swift */,
 			);
 			path = SleepRank;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				7C718DB51DCDC2E100F0BC0A /* ViewController.swift in Sources */,
 				9BBAC47A1DCE8F8E0045FDFE /* SleeperDetailViewController.swift in Sources */,
 				9BBAC47C1DCE93230045FDFE /* Sleeper.swift in Sources */,
+				9BBAC47E1DCF6A000045FDFE /* UIImageView+URL.swift in Sources */,
 				7C718DB31DCDC2E100F0BC0A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

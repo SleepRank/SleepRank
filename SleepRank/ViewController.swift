@@ -9,6 +9,7 @@
 import UIKit
 import HealthKit
 import FBSDKLoginKit
+import FBSDKCoreKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,6 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     var headerView: UIView!
     var sleepers:[Sleeper]!
+    var user:Sleeper!
     var sleepTime:Double!
 
     @IBOutlet weak var tableView: UITableView!
@@ -48,6 +50,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // Get sleepers data
         sleepers = []
+        getUserInfo()
         retrieveSleepAnalysis()
         
         // Initiate imageView:
@@ -67,6 +70,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
+    // Functions getting user info:
+    func getUserInfo()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"id, name, picture, friends"])
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            if ((error) != nil) {
+                print("Error: \(error)")
+            } else {
+                print("Result: \(result)")
+                let userInfo:NSDictionary = result as! NSDictionary
+                let userID = userInfo["id"] as! String
+                let userName = userInfo["name"] as! String
+                let userImageUrl = userInfo["picture"]["data"]["url"] as? URL
+                self.user.id = userID
+                self.user.name = userName
+                self.user.profileImageUrl = userImageUrl
+            }
+        })
+        
+        let graphRequest2 : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "cover", parameters: nil)
+        graphRequest2.start(completionHandler: { (connection, result, error) -> Void in
+            if ((error) != nil){
+                print("Error: \(error)")
+            } else {
+                print("Result 2: \(result)")
+            }
+        })
+
+    }
+    
     // Functions getting health data:
     func retrieveSleepAnalysis() {
         
@@ -80,10 +113,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 5, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
                 
                 if error != nil {
-                    
-                    // something happened
+                    print("Error: \(error)")
                     return
-                    
                 }
                 
                 if let result = tmpResult {
@@ -94,8 +125,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue{
                                 print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(sample.value)")
                                 self.sleepTime = sample.endDate.timeIntervalSince(sample.startDate) / 3600
-                                self.sleepers[0].sleepTime = self.sleepTime
-                                print("sleepTime updated")
+                                self.user.sleepTime = self.sleepTime
+                                self.tableView.reloadData()
+                                print("user updated")
                                 break
                             }
                         }
@@ -118,16 +150,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Functions getting Data:
             // getSleepers() in heaven
             print("sleepers initialized")
-            if let t = self.sleepTime{
-                let sleeper = Sleeper(r:"", s:"user", t:t)
-                self.sleepers.append(sleeper)
-            } else {
-                let sleeper = Sleeper(r:"", s:"user", t:0.00)
-                self.sleepers.append(sleeper)
-            }
-            
+            self.user = Sleeper(r: "", s: "", t: 0.0, u:nil)
+            self.sleepers.append(self.user)
             for index in 1...10 {
-                let sleeper = Sleeper(r: "\(index)", s: "lalala", t: Double(index))
+                let sleeper = Sleeper(r: "\(index)", s: "lalala", t: Double(index), u:nil)
                 self.sleepers.append(sleeper)
             }
         }
@@ -154,7 +180,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SleeperCell", for: indexPath) as! SleeperCell
         
-        cell.sleeper = sleepers[indexPath.row]
+        if(indexPath.row == 0) {
+            cell.sleeper = user
+        } else {
+            cell.sleeper = sleepers[indexPath.row]
+        }
         cell.backgroundColor = UIColor.clear
         
         return cell

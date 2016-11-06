@@ -11,15 +11,17 @@ import UIKit
 
 class Sleeper: NSObject {
     
+    var id:String!
     var rank:String!
     var name:String!
     var sleepTime: Double!
-    // var profileImageUrl: URL?
+    var profileImageUrl: URL?
     
-    init(r: String, s:String, t:Double) {
+    init(r: String, s:String, t:Double, u:URL?) {
         rank = r
         name = s
         sleepTime = t
+        profileImageUrl = u
     }
     
 }

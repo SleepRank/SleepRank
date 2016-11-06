@@ -22,10 +22,14 @@ class SleeperCell: UITableViewCell {
             rankLabel.text = sleeper.rank
             nameLabel.text = sleeper.name
             sleepingTimeLabel.text = String(format: "%.2f", sleeper.sleepTime!) + " hours"
-            //let noImageUrl: URL = URL(string: "http://1vyf1h2a37bmf88hy3i8ce9e.wpengine.netdna-cdn.com/wp-content/themes/public/img/noimgavailable.jpg")!
+            if let Url = sleeper.profileImageUrl {
+                profileImageView.downloadedFrom(url: Url)
+            } else {
+                let noImageUrl: URL = URL(string: "http://1vyf1h2a37bmf88hy3i8ce9e.wpengine.netdna-cdn.com/wp-content/themes/public/img/noimgavailable.jpg")!
+                profileImageView.downloadedFrom(url: noImageUrl)
+            }
         }
     }
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +38,7 @@ class SleeperCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
-        
     }
     
 }
