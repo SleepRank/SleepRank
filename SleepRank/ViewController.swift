@@ -67,7 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         headerView.addSubview(imageView)
         tableView.bounces = false
         tableView.backgroundColor = UIColor.clear
-        
+        tableView.reloadData()
     }
     
     // Functions getting user info:
@@ -82,10 +82,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let userInfo:NSDictionary = result as! NSDictionary
                 let userID = userInfo["id"] as! String
                 let userName = userInfo["name"] as! String
-                let userImageUrl = userInfo["picture"]["data"]["url"] as? URL
+                let userImageUrlDict = userInfo["picture"] as! NSDictionary
+                let userImageUrlDictData = userImageUrlDict["data"] as! NSDictionary
+                let userImageUrl = userImageUrlDictData["url"] as? String
                 self.user.id = userID
                 self.user.name = userName
-                self.user.profileImageUrl = userImageUrl
+                for sleeper in self.sleepers{
+                    sleeper.profileImageUrl = URL(string:userImageUrl!)
+                }
+                self.tableView.reloadData()
             }
         })
         
@@ -97,6 +102,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("Result 2: \(result)")
             }
         })
+        tableView.reloadData()
 
     }
     
@@ -110,7 +116,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
             
             // we create our query with a block completion to execute
-            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 5, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
+            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 7, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
                 
                 if error != nil {
                     print("Error: \(error)")
@@ -122,17 +128,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     // do something with my data
                     for item in result{
                         if let sample = item as? HKCategorySample {
-                            if sample.value == HKCategoryValueSleepAnalysis.asleep.rawValue{
-                                print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(sample.value)")
-                                self.sleepTime = sample.endDate.timeIntervalSince(sample.startDate) / 3600
-                                self.user.sleepTime = self.sleepTime
-                                self.tableView.reloadData()
-                                print("user updated")
-                                break
-                            }
+                            print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(sample.value)")
+                            self.sleepers[result.index(of: item)!].sleepTime = sample.endDate.timeIntervalSince(sample.startDate) / 3600
+                            self.sleepers[result.index(of: item)!].sleepBegin = sample.startDate
+                            self.sleepers[result.index(of: item)!].sleepEnd = sample.endDate
+                            print("user updated")
                         }
                     }
-                    
+                    self.sleepers.sort(by: >)
+                    self.tableView.reloadData()
                     /* no need for printing all the data
                     for item in result {
                         if let sample = item as? HKCategorySample {
@@ -150,12 +154,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             // Functions getting Data:
             // getSleepers() in heaven
             print("sleepers initialized")
-            self.user = Sleeper(r: "", s: "", t: 0.0, u:nil)
+            self.user = Sleeper(r: "", s: "", t: 0.0, u:nil, b:Date.init(), e: Date.init())
             self.sleepers.append(self.user)
-            for index in 1...10 {
-                let sleeper = Sleeper(r: "\(index)", s: "lalala", t: Double(index), u:nil)
+            let ss = ["Guocheng", "Bobby", "Rainy", "Obama", "Donald", "Hillary"]
+            for index in 1...6 {
+                let sleeper = Sleeper(r: "\(index)", s: ss[index-1], t: 8 - Double(index)/4, u:nil, b:Date.init(), e: Date.init())
                 self.sleepers.append(sleeper)
             }
+            tableView.reloadData()
         }
     }
     
@@ -180,11 +186,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "SleeperCell", for: indexPath) as! SleeperCell
         
-        if(indexPath.row == 0) {
-            cell.sleeper = user
-        } else {
-            cell.sleeper = sleepers[indexPath.row]
-        }
+        cell.sleeper = sleepers[indexPath.row]
+        cell.sleeper.rank = "\(indexPath.row)"
         cell.backgroundColor = UIColor.clear
         
         return cell

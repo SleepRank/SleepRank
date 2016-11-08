@@ -133,8 +133,8 @@
 				7C718DB91DCDC2E100F0BC0A /* Assets.xcassets */,
 				7C718DBB1DCDC2E100F0BC0A /* LaunchScreen.storyboard */,
 				7C718DBE1DCDC2E100F0BC0A /* Info.plist */,
-				9BBAC4751DCE87900045FDFE /* SleeperCell.swift */,
 				9BBAC47B1DCE93230045FDFE /* Sleeper.swift */,
+				9BBAC4751DCE87900045FDFE /* SleeperCell.swift */,
 				9BBAC47D1DCF69FE0045FDFE /* UIImageView+URL.swift */,
 			);
 			path = SleepRank;
